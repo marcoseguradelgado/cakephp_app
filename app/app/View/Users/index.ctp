@@ -1,24 +1,32 @@
-<h1>Usuarios</h1>
-<p><?php echo $this->Html->link('Agregar usuario', array('action' => 'add')); ?></p>
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Usuario</th>
-        <th>Acciones</th>
-        <th>Creado</th>
-    </tr>
-
+<h2>Usuarios</h2>
+<table id="recordsConsult">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Usuario</th>
+            <th>Acciones</th>
+            <th>Creado</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Usuario</th>
+            <th>Acciones</th>
+            <th>Creado</th>
+        </tr>
+    </tfoot>
     <!-- Here's where we loop through our $Users array, printing out User info -->
 
     <?php foreach ($users as $user): ?>
-        <tr>
-            <td><?php echo $user['User']['id']; ?></td>
-            <td>
+    <tr>
+        <td><?php echo $user['User']['id']; ?></td>
+        <td>
                 <?php
                 echo $user['User']['username'];
                 ?>
-            </td>
-            <td>
+        </td>
+        <td>
                 <?php
                 echo $this->Form->postLink(
                     'Remover',
@@ -26,11 +34,11 @@
                     array('confirm' => 'Esta seguro de eliminar este usuario?')
                 );
                 ?>
-            </td>
-            <td>
+        </td>
+        <td>
                 <?php echo $user['User']['created']; ?>
-            </td>
-        </tr>
+        </td>
+    </tr>
     <?php endforeach; ?>
 
 </table>

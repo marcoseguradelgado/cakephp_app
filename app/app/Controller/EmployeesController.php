@@ -18,20 +18,26 @@ class EmployeesController extends AppController {
     public function add() {
         if ($this->request->is('post')) {
             $this->Employee->create();
-            if ($this->Employee->save($this->request->data)) {
-                $this->Session->setFlash(__('The Employee has been saved'));
+            try{
+               if ($this->Employee->save($this->request->data)) {
+                $this->Session->setFlash(__('El empleado se ha salvado'));
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(
-                __('The Employee could not be saved. Please, try again.')
-            );
+                __('El empleado no se pudo salvar. Trate de nuevo')
+            ); 
+            }catch(Exception $e){
+                $this->Session->setFlash(__('El empleado ya existe'));
+                return $this->redirect(array('action' => 'index'));
+            }
+            
         }
     }
 
     public function edit($id = null) {
-        $this->Employee->id = $id;
+        $this->Employee->IdEmployee = $id;
         if (!$this->Employee->exists()) {
-            throw new NotFoundException(__('Invalid Employee'));
+            throw new NotFoundException(__('Empleado invalido'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->Employee->save($this->request->data)) {
