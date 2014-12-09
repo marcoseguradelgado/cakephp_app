@@ -1,6 +1,6 @@
 <h2>Empleados</h2>
 
-<table id="recordsConsult">
+<table id="ConsultTable">
     <thead>
         <tr>
             <th>Cedula</th>
@@ -30,13 +30,7 @@
         <td><?php echo $employee['Employee']['uuid']; ?></td>
         <td>
                 <?php
-                echo $this->Form->postLink(
-                    'Remover',
-                    array('action' => 'delete', $employee['Employee']['IdEmployee']),
-                    array('confirm' => 'Esta seguro de eliminar este empleado?')
-                )." / ".$this->Form->postLink(
-                    'Editar',
-                    array('action' => 'edit', $employee['Employee']['IdEmployee']));
+                echo $this->Html->link('Editar',array('action' => 'edit', $employee['Employee']['IdEmployee']));
                 ?>
         </td>
     </tr>

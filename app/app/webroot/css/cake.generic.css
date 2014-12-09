@@ -326,8 +326,7 @@ fieldset {
 
 fieldset legend {
     color: black;
-    font-size: 160%;
-    font-weight: bold;
+    font-size: 190%;
 }
 
 fieldset fieldset {
@@ -992,4 +991,15 @@ nav{
     -moz-border-radius: 0 10px 0 0;
     -webkit-border-radius: 0 10px 0 0;
     border-radius: 0 10px 0 0;
+}
+
+.searchTable{
+    width: 50%;
+    margin-bottom: 1.5em;
+}
+
+input[type="date"]{
+    font-size: 15px;
+    width: 260px;
+    padding: 2px;
 }

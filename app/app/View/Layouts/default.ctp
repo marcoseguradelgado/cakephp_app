@@ -82,6 +82,7 @@ $cakeDescription = __d('cake_dev', 'RESP');
         <?php echo $this->fetch('content'); ?>
             </div>
             <div id="footer">
+                <p>Universidad Internacional de las Americas - Marco Segura</p>
             </div>
         </div>
 <?php //echo $this->element('sql_dump'); ?>

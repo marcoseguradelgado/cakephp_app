@@ -1,5 +1,5 @@
-<h2>Usuarios</h2>
-<table id="recordsConsult">
+<h2>Usuarios administrativos</h2>
+<table id="ConsultTable">
     <thead>
         <tr>
             <th>Id</th>
